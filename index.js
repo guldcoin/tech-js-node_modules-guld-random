@@ -52,7 +52,7 @@ async function getRandStr (length = 256, charset = 'alphanumeric') {
   return rstr
 }
 
-async function getRandInt (maximum = 1000000) {
+async function getRandInt (maximum = 65536) {
   var buff = await getRandBuffer(Math.round(maximum / 256) + 1)
   var rint = 0
   for (var b of buff.values()) {
