@@ -15,7 +15,7 @@
   "author": "isysd",
   "license": "MIT",
   "dependencies": {
-    "guld-env": "^1.0.13",
+    "guld-env": "^1.0.14",
     "pify": "^3.0.0",
     "randombytes": "^2.0.6",
     "read-random": "^1.0.0"
