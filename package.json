@@ -1,6 +1,6 @@
 {
   "name": "guld-random",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "description": "Cryptographically secure random number generator using `/dev/urandom` with fallback to node's `crypto` and finally to `window.crypto || window.mscrypto`.",
   "main": "index.js",
   "scripts": {
