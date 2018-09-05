@@ -1,7 +1,7 @@
 const pify = require('pify')
 const readRandom = pify(require('read-random'))
 const randomBytes = require('randombytes')
-const { getJS, getOS } = require('guld-env')
+const guldEnv = require('guld-env')
 const URAND_OS = [
   'linux',
   'x11',
@@ -30,7 +30,6 @@ const BYTESNEEDED = [
   1099511627776,
   281474976710656
 ]
-var jsenv
 var osenv
 
 async function getHaystack (length = 256, charset = 'alphanumeric') {
@@ -43,9 +42,8 @@ async function getHaystack (length = 256, charset = 'alphanumeric') {
 }
 
 async function getRandBuffer (length = 256) {
-  jsenv = jsenv || getJS()
-  osenv = osenv || await getOS()
-  if (jsenv.startsWith('node') && URAND_OS.indexOf(osenv.toLowerCase()) !== -1) return readRandom(length)
+  osenv = osenv || (await guldEnv.os()).os
+  if (guldEnv.JS.startsWith('node') && URAND_OS.indexOf(osenv.toLowerCase()) !== -1) return readRandom(length)
   return randomBytes(length)
 }
 

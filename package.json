@@ -6,16 +6,20 @@
   "scripts": {
     "test": "./node_modules/mocha/bin/_mocha",
     "lint": "eslint --env browser *.js*",
-    "fix": "eslint --fix *.js*"
+    "fix": "eslint --fix *.js*",
+    "test:lint": "npm run lint && npm run test",
+    "build": "webpack"
   },
   "keywords": [
     "guld",
-    "fs"
+    "fs",
+    "node",
+    "browser"
   ],
   "author": "isysd",
   "license": "MIT",
   "dependencies": {
-    "guld-env": "^1.0.14",
+    "guld-env": "^2.0.6",
     "pify": "^3.0.0",
     "randombytes": "^2.0.6",
     "read-random": "^1.0.0"
@@ -31,7 +35,10 @@
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-standard": "^3.1.0",
     "mocha": "^5.2.0",
-    "pre-commit": "^1.2.2"
+    "pre-commit": "^1.2.2",
+    "webpack": "^4.17.2",
+    "mochify": "^5.8.1",
+    "puppeteer": "^1.7.0"
   },
   "pre-commit": [
     "lint",
@@ -41,6 +48,10 @@
   "engines": {
     "node": ">=7"
   },
-  "homepage": "https://github.com/isysd/tech-js-node_modules-guld-random#readme",
-  "repository": "git@github.com:isysd/tech-js-node_modules-guld-random.git"
+  "homepage": "https://guld.tech/lib/guld-random.html",
+  "repository": "https://bitbucket.org/guld/tech-js-node_modules-guld-random",
+  "browser": "guld-random.min.js",
+  "eslintIgnore": [
+    "*.min.js"
+  ]
 }

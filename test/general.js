@@ -1,6 +1,6 @@
 /* global describe:false it:false */
 const assert = require('chai').assert
-const { getHaystack, getRandBuffer, getRandStr, getRandInt } = require('./index.js')
+const { getHaystack, getRandBuffer, getRandStr, getRandInt } = require('../index.js')
 
 describe('guld-random', function () {
   it('getHaystack 100', async function () {
